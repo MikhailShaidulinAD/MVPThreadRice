@@ -1,4 +1,4 @@
-package com.shaidulin.mvvmthreadrace
+package com.shaidulin.mvpthreadrace
 
 import org.junit.Test
 

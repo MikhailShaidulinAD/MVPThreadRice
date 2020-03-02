@@ -2,9 +2,24 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimary">#6900FF</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="DefaultButton" parent="Theme.AppCompat.DayNight.DarkActionBar">
+        <item name="android:background">@drawable/button_click_event</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:padding">6dp</item>
+    </style>
+
+    <style name="DefaultText" parent="Theme.AppCompat.DayNight.DarkActionBar">
+        <item name="android:textColor">@color/dark</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:includeFontPadding">false</item>
     </style>
 
 </resources>
