@@ -16,7 +16,12 @@ class MainPresenter:MvpPresenter<MainView>() {
     override fun onFirstViewAttach() {
         super.onFirstViewAttach()
         BaseApplication.baseApplication?.getMainSubcomponent()?.inject(this)
+        requestRootPath()
         sendRequestPermission()
+    }
+
+    private fun requestRootPath(){
+        viewState.getPathDownloadDirectory()
     }
 
     private fun sendRequestPermission(){
@@ -40,6 +45,11 @@ class MainPresenter:MvpPresenter<MainView>() {
         interactor.fetchAvailableWrite(isAvailable)
     }
 
+    fun rootPathForFile(path:String){
+        if (path.isNotEmpty())
+        interactor.rootPathForFile(path)
+    }
+
 
     fun needRunThreads(){
         viewState.clearResult()
@@ -53,5 +63,6 @@ class MainPresenter:MvpPresenter<MainView>() {
 
     override fun onDestroy() {
         super.onDestroy()
+        BaseApplication.baseApplication?.removeMainSubcomponent()
     }
 }

@@ -11,7 +11,7 @@ class MainInteractor(private val repository: IMainRepositories):IMainInteractor 
         private const val TAG = "MainInteractor"
     }
     override fun requestCreateTxtFile(nameFile: String) {
-        repository.saveWriteAndReadTextFile(WriteAndReadTextFile(CustomFile(fileName = nameFile, format = "txt")))
+        repository.saveWriteAndReadTextFile(WriteAndReadTextFile(CustomFile(fileName = nameFile, format = "txt", rootPath = repository.getRootPath()?:"")))
     }
 
     override fun requestCreateThreads(names:List<String>, countWriters:Int):Boolean {
@@ -61,5 +61,9 @@ class MainInteractor(private val repository: IMainRepositories):IMainInteractor 
     override fun clearWinnerStatistic() {
         val textFileReader = repository.getWriteAndReadTextFile()
         textFileReader?.clearWinner()
+    }
+
+    override fun rootPathForFile(path: String) {
+        repository.saveRootPath(path)
     }
 }

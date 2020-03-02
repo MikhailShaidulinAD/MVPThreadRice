@@ -6,4 +6,5 @@ interface MainView:BaseView {
     fun showResultWinner(winner:String)
     fun clearResult()
     fun checkPermissionWriteExternalStorage()
+    fun getPathDownloadDirectory()
 }

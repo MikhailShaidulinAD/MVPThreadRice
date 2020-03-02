@@ -38,4 +38,12 @@ class MainRepositories(val service:MainService, val store:MainStore):IMainReposi
     override fun getAvailableWrite(): Boolean {
         return store.isAvailableWrite
     }
+
+    override fun saveRootPath(path: String) {
+        store.rootPath = path
+    }
+
+    override fun getRootPath(): String? {
+        return store.rootPath
+    }
 }

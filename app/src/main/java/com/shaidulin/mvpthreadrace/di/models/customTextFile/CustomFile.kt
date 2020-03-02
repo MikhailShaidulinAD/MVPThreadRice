@@ -1,9 +1,8 @@
 package com.shaidulin.mvpthreadrace.di.models.customTextFile
 
-import android.os.Environment
 import java.io.*
 
-class CustomFile(fileName:String, format:String) {
+class CustomFile(fileName:String, format:String, rootPath:String) {
     companion object{
         private const val TAG = "CustomFile"
     }
@@ -11,10 +10,10 @@ class CustomFile(fileName:String, format:String) {
     var writer: FileWriter
     var reader:FileReader
     init {
-        val root = File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), "Folder")
+        val root = File(rootPath, "Folder")
         if (!root.exists())
-            root.mkdir()
-        file = File(root, "$fileName.$format")
+            root.mkdirs()
+        file = File(root, "$fileName")
         if (file.exists()){
             file.createNewFile()
         }else{

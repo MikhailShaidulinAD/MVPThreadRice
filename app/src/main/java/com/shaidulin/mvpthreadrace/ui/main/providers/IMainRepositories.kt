@@ -12,4 +12,6 @@ interface IMainRepositories {
     fun getWriteAndReadTextFile():WriteAndReadTextFile?
     fun setAvailableWrite(isAvailable:Boolean)
     fun getAvailableWrite():Boolean
+    fun saveRootPath(path:String)
+    fun getRootPath():String?
 }

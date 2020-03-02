@@ -5,6 +5,7 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Bundle
+import android.os.Environment
 import android.os.Handler
 import android.view.View
 import androidx.core.app.ActivityCompat
@@ -57,6 +58,10 @@ class MainActivity:BaseActivity(), MainView, View.OnClickListener {
         }else{
             presenter.setIsAvailableWrite(true)
         }
+    }
+
+    override fun getPathDownloadDirectory() {
+        presenter.rootPathForFile(this.getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS)?.path?:"")
     }
 
     override fun onClick(v: View?) {

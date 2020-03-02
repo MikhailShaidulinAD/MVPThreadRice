@@ -6,4 +6,5 @@ interface IMainInteractor {
     fun runningAllThreads(call: (message:String?) -> Unit)
     fun fetchAvailableWrite(isAvailable:Boolean)
     fun clearWinnerStatistic()
+    fun rootPathForFile(path:String)
 }
