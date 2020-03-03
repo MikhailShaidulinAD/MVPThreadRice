@@ -13,7 +13,7 @@ class CustomFile(fileName:String, format:String, rootPath:String) {
         val root = File(rootPath, "Folder")
         if (!root.exists())
             root.mkdirs()
-        file = File(root, "$fileName")
+        file = File(root, "$fileName.$format")
         if (file.exists()){
             file.createNewFile()
         }else{

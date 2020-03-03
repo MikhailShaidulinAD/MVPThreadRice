@@ -61,7 +61,7 @@ class MainActivity:BaseActivity(), MainView, View.OnClickListener {
     }
 
     override fun getPathDownloadDirectory() {
-        presenter.rootPathForFile(this.getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS)?.path?:"")
+        presenter.rootPathForFile(this.getExternalFilesDir(Environment.DIRECTORY_DOCUMENTS)?.path?:"")
     }
 
     override fun onClick(v: View?) {
